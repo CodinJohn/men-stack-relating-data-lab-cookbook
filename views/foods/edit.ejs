@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Food</title>
+</head>
+<body>
+    <%- include('../partials/_navbar.ejs') %>
+    <h1>Edit Food Item</h1>
+    <form action="/users/<%= user._id %>/foods/<%= item._id %>?_method=PUT" method="POST">
+        <label for="text">Food Text:</label>
+        <input type="text" name="text" id="food" value="<%= item.text %>" required />
+        <label for="isInPantry">Is in Pantry?</label>
+        <input type="checkbox" name="isInPantry" id="isInPantry" <%= item.isInPantry ? 'checked' : '' %> />
+        <button type="submit">Update Food</button>
+    </form>
+    <a href="/users/<%= user._id %>/foods">Back to Pantry</a>
+</body>
+</html>
+
+<!-- Collaberated with Anitra & Samantha -->
